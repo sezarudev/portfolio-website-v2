@@ -143,32 +143,15 @@ export const projects = [
 		githubUrl: 'https://github.com/sezaru-dev/hyrivo',
 	},
 	{
-		title: 'Hyrivo',
+		title: 'Tayug Skills Hub',
 		description:
-			'Hyrivo is a personal job application tracker that helps you manage applications, take notes, and track progress to stay organized in your job hunt.',
-		techsUsed: ['React', 'Next', 'Tailwind', 'Shadcn-ui', 'Zustand', 'Tanstack-query', 'MongoDB', 'NextAuth', 'Framer Motion'],
-		image: 'projects/hyrivo.png',
-		liveUrl: 'https://hyrivo.vercel.app/',
-		githubUrl: 'https://github.com/sezaru-dev/hyrivo',
+			'Tayug Skills Hub is a personal project web platform that connects local skilled individuals with people looking for their services.',
+		techsUsed: ['React', 'Next', 'Tailwind', 'Typescript', 'Prisma-ORM', 'NextAuth', 'PostgreSQL', 'Cloudinary'],
+		image: 'projects/tayug-skills-hub.png',
+		liveUrl: 'https://tayug-skills-hub.vercel.app/',
+		githubUrl: 'https://github.com/sezarudev/tayug-skills-hub',
 	},
-	{
-		title: 'JLPT Tango単語',
-		description:
-			'A simple website with Japanese Language Proficiency Test(JLPT) vocabularies from N5 level to N1 level.',
-		techsUsed: ['React', 'Next', 'Tailwind', 'Shadcn-ui', 'Zustand', 'Tanstack-query', 'MongoDB', 'NextAuth', 'Framer Motion'],
-		image: 'projects/hyrivo.png',
-		liveUrl: 'https://hyrivo.vercel.app/',
-		githubUrl: 'https://github.com/sezaru-dev/hyrivo',
-	},
-	{
-		title: 'Todo App',
-		description:
-			'A Todo App with a dark/light mode theme switcher and local storage. A challenge from the Frontend Mentor website.',
-		techsUsed: ['React', 'Next', 'Tailwind', 'Shadcn-ui', 'Zustand', 'Tanstack-query', 'MongoDB', 'NextAuth', 'Framer Motion'],
-		image: 'projects/hyrivo.png',
-		liveUrl: 'https://hyrivo.vercel.app/',
-		githubUrl: 'https://github.com/sezaru-dev/hyrivo',
-	},
+
 ];
 
 
