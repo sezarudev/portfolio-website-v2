@@ -36,7 +36,7 @@ export default function ProjectLeft({ project }: Project) {
           alt={project.title}
           fill
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-top"
         />
       </motion.a>
 
