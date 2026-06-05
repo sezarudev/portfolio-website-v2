@@ -1,11 +1,11 @@
 'use client'
 import React from 'react'
-import Image from 'next/image'
 import { HiX, HiMenu } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion"
 import { navLinks } from '@/constant';
 import { fade, mobileMenu, mobileMenuLink } from '@/utils/motions';
 import { useMobileMenu } from '@/hooks/useMobileMenu';
+import Button from '../ui/Button';
 
 const Header = () => {
   const { isOpen, toggleMenu, closeMenuByNavlist } = useMobileMenu()
@@ -21,28 +21,42 @@ const HomeHandler = (e: React.MouseEvent<HTMLAnchorElement>) => {
       variants={fade(0.6, 0)}
       initial="hidden"
       animate="show"
-      className='fixed top-0 left-0 right-0 z-50 w-full bg-background'>
-      <div  className='relative wrapper py-6  flex items-center justify-between z-40'>
+      className='fixed top-0 left-0 right-0 z-50 w-full bg-background/60 backdrop-blur-lg'>
+      <div className='relative wrapper py-4 flex items-center justify-between z-40'>
 
         <a href={`/`} className='flex items-center gap-3' onClick={HomeHandler}>
-          <Image src="/cob-white.svg" alt="/" width={28} height={28} priority className='flex-none hidden dark:block'/>
-          <Image src="/cob-blk.svg" alt="/" width={28} height={28} priority className='flex-none block dark:hidden'/>
-          {/* <Image src="/cb.svg" alt="/" width={32} height={32} priority className='flex-none invert dark:invert-0'/> */}
-          <h2 className='font-bold text-lg'>Cezar</h2>
+          <h2 className='font-bold text-lg text-primary-foreground'>Sezaru<span className='text-primary'>Dev</span></h2>
         </a>
 
         <nav className="hidden md:block">
           <ul className="flex gap-8 items-center">
-            {navLinks.map(link => (
-              <a href={link.url} key={link.title} 
-              className={`
-                
-                ${link.id === "cta_contact" ? "px-4 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors" : "nav_item"}
-              `}
-              >
-                {link.title}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+                  const isCTA = link.id === "cta_contact"
+
+                  return (
+                    <motion.li
+                      key={link.title}
+                      variants={mobileMenuLink}
+                      className="flex items-center justify-center"
+                    >
+                      {isCTA ? (
+                        <Button asChild>
+                          <a href={link.url} onClick={closeMenuByNavlist}>
+                            {link.title}
+                          </a>
+                        </Button>
+                      ) : (
+                        <a
+                          href={link.url}
+                          onClick={closeMenuByNavlist}
+                          className="nav_item"
+                        >
+                          {link.title}
+                        </a>
+                      )}
+                    </motion.li>
+                  )
+                })}
           </ul>
         </nav>
 
@@ -66,24 +80,33 @@ const HomeHandler = (e: React.MouseEvent<HTMLAnchorElement>) => {
           >
             <nav className="mx-auto px-5 w-full h-full flex">
               <ul className=" flex flex-col items-center justify-center space-y-6 w-full text-lg">
-                {navLinks.map((link) => (
-                  <motion.li
-                    key={link.title}
-                    variants={mobileMenuLink}
-                    onClick={closeMenuByNavlist}
-                    className='p-2 w-44 flex items-center justify-center'
-                  >
-                    <a href={link.url}
-                    onClick={closeMenuByNavlist}
-                    className={`
-                      
-                      ${link.id === "cta_contact" ? "px-7 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors" : "nav_item"}
-                    `}
+                {navLinks.map((link) => {
+                  const isCTA = link.id === "cta_contact"
+
+                  return (
+                    <motion.li
+                      key={link.title}
+                      variants={mobileMenuLink}
+                      className="flex items-center justify-center"
                     >
-                      {link.title}
-                    </a>
-                  </motion.li>
-                ))}
+                      {isCTA ? (
+                        <Button asChild>
+                          <a href={link.url} onClick={closeMenuByNavlist}>
+                            {link.title}
+                          </a>
+                        </Button>
+                      ) : (
+                        <a
+                          href={link.url}
+                          onClick={closeMenuByNavlist}
+                          className="nav_item"
+                        >
+                          {link.title}
+                        </a>
+                      )}
+                    </motion.li>
+                  )
+                })}
               </ul>
 
             </nav>
