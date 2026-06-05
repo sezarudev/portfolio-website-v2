@@ -34,8 +34,8 @@ export default function SkillsTab({ selected, onSelect }: SkillsTabProps) {
             onClick={() => onSelect(key)}
             className={`relative pb-1 focus:outline-none transition-colors duration-300 ${
               isActive
-                ? "text-purple-500 font-semibold"
-                : "text-foreground hover:text-purple-400"
+                ? "text-primary font-semibold"
+                : "text-foreground hover:text-primary"
             }`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -45,7 +45,7 @@ export default function SkillsTab({ selected, onSelect }: SkillsTabProps) {
             {isActive && (
               <motion.span
                 layoutId="activeTab" // shared layout for smooth sliding
-                className="absolute bottom-0 left-0 w-full h-0.5 bg-purple-500 rounded-full"
+                className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.5 }}
               />
             )}
