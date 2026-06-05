@@ -2,9 +2,9 @@
 
 import React from 'react'
 import { heroSectionData } from '@/constant'
-import AnimatedText from '../AnimatedText'
 import { motion } from 'framer-motion'
 import { staggerContainer, fadeIn, fade } from '@/utils/motions'
+import Button from '../ui/Button'
 
 export default function Hero() {
   return (
@@ -41,24 +41,17 @@ export default function Hero() {
           variants={fade(0.6, 0)}
           className="text-center px-4 max-w-2xl lg:max-w-4xl"
         >
-          {/* Heading with AnimatedText letters */}
           <motion.h1
             variants={fadeIn("up", "spring", 0.1, 0.8)}
-            className="font-bold text-4xl md:text-5xl lg:text-6xl leading-snug"
+            className="text-primary-foreground font-bold text-4xl md:text-5xl lg:text-6xl leading-snug"
           >
-            {heroSectionData.heading.split(" ").map((word, wIndex) => (
-              <span key={wIndex} className="inline-flex mr-[2%]">
-                {word.split("").map((letter, lIndex) => (
-                  <AnimatedText key={lIndex}>{letter}</AnimatedText>
-                ))}
-              </span>
-            ))}
+            {heroSectionData.heading}
           </motion.h1>
 
           {/* Description */}
           <motion.p
             variants={fade(0.6, 0.3)}
-            className="text-foreground/80 mt-4 text-base md:text-lg max-w-3xl mx-auto"
+            className="text-muted-foreground mt-4 max-w-2xl mx-auto"
           >
             {heroSectionData.description}
           </motion.p>
@@ -68,50 +61,23 @@ export default function Hero() {
             variants={fade(0.6, 0.5)}
             className="flex flex-wrap gap-4 items-center justify-center mt-10"
           >
-            <motion.a
-              variants={fadeIn("up", "tween", 0, 0.6)}
-              href="#projects"
-              className="
-                relative
-                px-6 md:px-8 py-3
-                rounded-xl
-                font-medium
-                text-white
-                bg-purple-600
-                hover:bg-purple-700
-                focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-neutral-950
-                transition-all duration-300
-                before:absolute before:inset-0 before:rounded-xl
-                before:bg-purple-500 before:blur-md before:opacity-20
-                before:transition before:duration-300
-                hover:before:opacity-40
-                before:-z-10
-              "
-            >
-              Explore Projects
-            </motion.a>
 
-            <motion.a
+            <motion.div
               variants={fadeIn("up", "tween", 0, 0.6)}
-              href="#contact"
-              className="
-                relative
-                px-6 md:px-8 py-3
-                rounded-xl
-                font-medium
-                border border-foreground
-                text-foreground
-                hover:bg-foreground/5
-                focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-neutral-950
-                transition-all duration-300
-                before:absolute before:inset-0 before:rounded-xl
-                before:bg-foreground/5 before:blur-sm before:opacity-0
-                before:transition before:duration-300
-                hover:before:opacity-20 before:-z-10
-              "
             >
-              Get in Touch
-            </motion.a>
+              <Button asChild variant='primary' size='lg'>
+                <a href="#projects">Explore Projects</a>
+              </Button>
+            </motion.div>
+
+            <motion.div
+              variants={fadeIn("up", "tween", 0, 0.6)}
+            >
+              <Button asChild variant='secondary' size='lg'>
+                <a href="#contact">Get in Touch</a>
+              </Button>
+            </motion.div>
+
           </motion.div>
         </motion.div>
       </motion.div>
