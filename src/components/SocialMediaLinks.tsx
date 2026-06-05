@@ -1,4 +1,5 @@
 import { Socials } from '@/constant'
+import Link from 'next/link'
 import React from 'react'
 
 const SocialMediaLinks = () => {
@@ -8,14 +9,14 @@ const SocialMediaLinks = () => {
         {Socials.map((item) => (
 
         <li key={item.name}>
-          <a 
+          <Link 
             href={item.url} 
             target='_blank' 
             rel="noopener noreferrer" 
             aria-label={item.name}
-            className='hover:text-purple-500 transition-colors ease-in-out duration-200'>
+            className='hover:text-primary transition-colors ease-in-out duration-150'>
             {item.logo}
-          </a>
+          </Link>
         </li>
         ))}
       </ul>
