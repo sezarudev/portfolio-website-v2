@@ -3,15 +3,38 @@
 @tailwind utilities;
 
 :root {
-  --background: 30 25% 99%;   /* #fcfbfa */
-  --foreground: 0 0% 20%;     /* #333333 */
-  --blob: 270 100% 75%;       /* #c480ff (light pastel purple) */
-}
+  /* Base */
+  --background: 260 24% 5%;        /* #0B0A10 */
+  --foreground: 0 0% 98%;          /* #FAFAFA */
 
-.dark {
-  --background: 0 0% 8%;      /* #141414 */
-  --foreground: 0 0% 93%;     /* #ededed */
-  --blob: 270 90% 60%;        /* #a855f7 (purple-500) */
+  /* Surfaces */
+  --surface: 255 21% 9%;           /* #12111A */
+  --surface-2: 255 20% 11%;        /* #171621 */
+
+  /* Brand */
+  --primary: 262 83% 58%;          /* #7C3AED */
+  --primary-foreground: 0 0% 98%; /* #FAFAFA */
+
+  --secondary: 271 81% 56%;        /* #9333EA */
+  --secondary-foreground: 0 0% 98%;
+
+  /* Accent */
+  --accent: 252 91% 92%;           /* #DDD6FE */
+  --accent-foreground: 262 83% 58%;
+
+  /* Text */
+  --muted-foreground: 240 5% 65%; /* #A1A1AA */
+  --caption: 240 5% 46%;          /* #71717A */
+
+  /* Borders */
+  --border: 257 14% 18%;          /* #2A2734 */
+  --input: 257 14% 18%;
+  --ring: 262 83% 58%;
+
+  /* Effects */
+  --blob: 262 83% 58%;
+
+  --radius: .4rem
 }
 
 body {
@@ -25,5 +48,9 @@ body {
 
 .nav_item {
   @apply relative 
-    hover:text-purple-500 transition-colors duration-500 ease-in-out
+    hover:text-primary-foreground transition-colors duration-150 ease-in-out text-muted-foreground
+}
+
+.section-heading2 {
+  @apply text-3xl lg:text-4xl font-medium max-w-xl
 }
