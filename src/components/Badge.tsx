@@ -1,12 +1,22 @@
+import { cn } from '@/lib/utils'
 import React from 'react'
 
 type BadgeProps = {
-  children: string | React.ReactNode
+  variant?: "default" | "primary" | "accent"
+  children: React.ReactNode
 }
 
-export default function Badge({children}: BadgeProps) {
+export default function Badge({children = "Badge", variant = "default"}:BadgeProps) {
   return (
-    <span className="inline-flex items-center rounded-full px-3 py-1 text-xs lg:text-sm font-medium bg-neutral-500 dark:bg-neutral-800/80 text-white dark:border dark:border-neutral-700 shadow-sm">
+    <span className={cn("text-xs font-medium leading-none",
+      variant === "default" &&
+          "inline-flex items-center px-[12px] py-1.5 bg-primary-foreground/[0.04] border border-primary-foreground/[0.06] rounded-customRadius text-muted-foreground",
+      variant === "primary" &&
+          "inline-flex items-center px-[12px] py-1.5 bg-primary/[0.15] border border-primary/[0.25] rounded-customRadius text-accent",
+      variant === "accent" &&
+          "inline-flex items-center px-[12px] py-1.5 text-accent bg-transparent rounded-customRadius backdrop-blur-md",
+
+    )}>
       {children}
     </span>
 
