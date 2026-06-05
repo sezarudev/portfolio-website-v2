@@ -9,13 +9,45 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "hsl(var(--background) / <alpha-value>)",
-        foreground: "hsl(var(--foreground) / <alpha-value>)",
-        blob: "hsl(var(--blob) / <alpha-value>)",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+
+        surface: "hsl(var(--surface))",
+        "surface-2": "hsl(var(--surface-2))",
+
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+
+        muted: {
+          foreground: "hsl(var(--muted-foreground))",
+        },
+
+        caption: "hsl(var(--caption))",
+
+        blob: "hsl(var(--blob))",
       },
+      borderRadius: {
+        customRadius: "var(--radius)"
+      }
     },
   },
   plugins: [],
-  darkMode: "class", // for next-themes
+  /* darkMode: "class",  */// for next-themes
 };
 export default config;
