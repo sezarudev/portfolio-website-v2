@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/cob-favicon.svg",
   },
+  verification: {
+    google: "IP0HaoRzlkc840lMZiheJiOdrAcYI1DKiHrppznEE0k",
+  },
   keywords: [
     "Cezarlito O. Baguhin",
     "SezaruDev",
