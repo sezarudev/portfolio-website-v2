@@ -1,51 +1,42 @@
 'use client'
 import { projects, ProjectSectionText } from '@/constant'
 import React from 'react'
-import ProjectLeft from '../ProjectLeft'
-import ProjectRight from '../ProjectRight'
-import ProjectCard from './ProjectCard'
-import AnimatedText from '../AnimatedText'
+import ProjectCard from '../ProjectCard'
 import { motion } from 'framer-motion'
 import { fadeIn, staggerContainer } from '@/utils/motions'
 
 export default function Projects() {
   return (
-    <motion.section id='projects' className='wrapper py-32 overflow-hidden'
-      variants={staggerContainer(0.15, 0)} // 👈 apply stagger container
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.1 }}
+    <motion.section id='projects' className='relative w-full'>
+      <div className="absolute top-[25vh] sm:top-[20vh] lg:top-[18vh] left-1/2 -translate-x-1/2 w-[80vw] sm:w-[60vw] lg:w-[70vw] rotate-12 blur-[120px] sm:blur-[160px] lg:blur-[220px]">
+        <div className=" w-full h-[90px] sm:h-[130px] lg:h-[190px] bg-gradient-to-r from-primary/50 to-primary/20 [border-radius:50%/50%]"/>
+      </div>
+      <motion.div
+        className='wrapper py-32'
+        variants={staggerContainer(0.15, 0)} 
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.1 }}
       >
-      <motion.div className='mb-24' variants={fadeIn("right", "spring", 0, 0.6)}>
-        <h2 className='uppercase tracking-widest text-foreground/60 mb-4'>{ProjectSectionText.heading}</h2>
-        <p className='text-3xl lg:text-4xl font-medium max-w-xl'>
-          {ProjectSectionText.description.split(" ").map((word, wIndex) => (
-              <span key={wIndex} className="inline-flex mr-[2%]">
-                {word.split("").map((letter, lIndex) => (
-                  <AnimatedText key={lIndex}>{letter}</AnimatedText>
-                ))}
-              </span>
-            ))}
+
+        <motion.div className='mb-24' variants={fadeIn("right", "spring", 0, 0.6)}>
+          <h2 className='uppercase tracking-widest text-muted-foreground mb-4 text-sm'>{ProjectSectionText.heading}</h2>
+          <p className='section-heading2'>
+            {ProjectSectionText.description}
           </p>
+        </motion.div>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+          {projects.map((project, index) => {
+              return (
+                <ProjectCard key={index} project={project}/>
+              )
+            })
+          }
+        </div>
       </motion.div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:hidden gap-16 md:gap-6 lg:gap-48 mb-8'>
-        {projects.map((project, index) => {
-            return (
-              <ProjectCard key={index} project={project}/>
-            )
-          })
-        }
-      </div>
-      <div className='hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-32 md:gap-6 lg:gap-48 mb-8 max-w-7xl mx-auto'>
-        {projects.map((project, index) => {
-            if (index % 2 === 1) {
-            return <ProjectLeft key={index} project={project}/>
-          }
-            return <ProjectRight key={index} project={project}/>
-          })
-        }
-      </div>
+
 
     </motion.section>
   )
