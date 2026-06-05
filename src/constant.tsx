@@ -24,9 +24,9 @@ export const navLinks = [
 ];
 
 export const heroSectionData = {
-	heading: 'Transforming Ideas into Interactive Web Experiences',
+	heading: 'Frontend Developer crafting engaging web experiences',
 	description:
-		'Passionate about creating practical and engaging web experiences, I specialize in React and Next.js while exploring backend development to broaden my impact.',
+		'I specialize in React and Next.js, building modern web applications with clean user interfaces while continuously expanding my backend development skills.',
 };
 export const ProjectSectionText = {
 	heading: 'Projects',
@@ -41,94 +41,123 @@ export const SkillsSectionText = {
 export const AboutSectionText = {
 	heading: 'About',
 	description:
-		"Driven by Passion.",
+		"Turning ideas into real experiences",
 };
 export const ContactSectionText = {
 	heading: 'Connect',
   subheading: 'Get in touch',
-	description: "I’m a Front-end Developer seeking opportunities to contribute to real-world projects and grow my skills. If you’re looking for someone passionate about crafting modern, responsive web applications, feel free to reach out — my inbox is always open.",
+	description: "I’m a Frontend Developer focused on building modern, responsive web applications. I’m open to opportunities and collaborations. Feel free to reach out.",
 };
+
 
 export const skills = [
 	{
 		name: 'HTML',
 		logo: 'html5.svg',
-    category: ['frontend']
+    category: ['frontend'],
+    isCore: false
 	},
 	{
 		name: 'CSS',
 		logo: 'css.svg',
-    category: ['frontend']
+    category: ['frontend'],
+    isCore: false
 	},
 	{
 		name: 'Javascript',
 		logo: 'js.svg',
-    category: ['frontend', 'backend']
+    category: ['frontend', 'backend'],
+    isCore: false
 	},
 	{
 		name: 'Tailwind',
 		logo: 'tailwind.svg',
-    category: ['frontend']
+    category: ['frontend'],
+    isCore: true
 	},
 	{
 		name: 'React',
 		logo: 'react.svg',
-    category: ['frontend']
+    category: ['frontend'],
+    isCore: true
 	},
 	{
-		name: 'Next',
+		name: 'Next.js',
 		logo: 'nextjs.svg',
-    category: ['frontend', 'backend']
+    category: ['frontend', 'backend'],
+    isCore: true
 	},
 	{
 		name: 'Node JS',
 		logo: 'nodejs.svg',
-    category: ['frontend', 'backend']
+    category: ['frontend', 'backend'],
+    isCore: false
 	},
 	{
 		name: 'Typescript',
 		logo: 'typescript.svg',
-    category: ['frontend', 'backend']
+    category: ['frontend', 'backend'],
+    isCore: false
 	},
 	{
     name: 'Zustand',
 		logo: 'zustand.webp',
-    category: ['frontend']
+    category: ['frontend'],
+    isCore: false
 	},
 	{
 		name: 'NextAuth',
 		logo: 'nextauth.webp',
-    category: ['backend']
+    category: ['backend'],
+    isCore: false
 	},
 	{
 		name: 'MongoDB',
 		logo: 'mongodb.webp',
-    category: ['backend']
+    category: ['backend'],
+    isCore: false
+	},
+	{
+		name: 'PostgreSQL',
+		logo: 'postgresql.svg',
+    category: ['backend'],
+    isCore: false
+	},
+	{
+		name: 'Prisma ORM',
+		logo: 'prisma.svg',
+    category: ['backend'],
+    isCore: false
 	},
 	{
     name: 'Tanstack Query',
 		logo: 'react-query.svg',
-    category: ['frontend']
+    category: ['frontend'],
+    isCore: false
 	},
   {
     name: 'Framer Motion',
     logo: 'framermotion.webp',
-    category: ['frontend']
+    category: ['frontend'],
+    isCore: false
   },
     {
     name: 'Git',
     logo: 'git.svg',
-    category: ['tools']
+    category: ['tools'],
+    isCore: false
   },
   {
 		name: 'Github',
 		logo: 'github.webp',
-    category: ['tools']
+    category: ['tools'],
+    isCore: false
 	},
   {
 		name: 'Postman',
 		logo: 'postman.svg',
-    category: ['tools']
+    category: ['tools'],
+    isCore: false
 	},
 ];
 
@@ -179,6 +208,6 @@ export const Socials = [
 	{
 		name: 'github',
 		logo: <FaGithub size={18} />,
-		url: 'https://github.com/sezaru-dev',
+		url: 'https://github.com/sezarudev',
 	},
 ];
