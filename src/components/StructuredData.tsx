@@ -9,12 +9,12 @@ export default function StructuredData() {
     "@type": "Person",
     name: "Cezarlito O. Baguhin",
     alternateName: "SezaruDev",
-    url: "https://cezarlitobaguhin.vercel.app",
+    url: "https://sezarudev.vercel.app",
     jobTitle: "Frontend Developer",
     description:
       "Transforming ideas into interactive web experiences using React, Next.js, and modern web technologies.",
     sameAs: [
-      "https://github.com/sezaru-dev",
+      "https://github.com/sezarudev",
       "https://linkedin.com/in/cezarlito-baguhin-184748175",
       "https://www.facebook.com/sezaru20",
       "https://www.tiktok.com/@sezarudev",
