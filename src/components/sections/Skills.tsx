@@ -5,8 +5,6 @@ import SkillCard from '../SkillCard'
 import SkillsTab from '../SkillsTab'
 import { motion, AnimatePresence } from 'framer-motion'
 import { fade, fadeIn, staggerContainer } from '@/utils/motions'
-import AnimatedText from '../AnimatedText'
-
 
 export type Categories = 'all' | 'frontend' | 'backend' | 'tools'
 
@@ -30,17 +28,11 @@ export default function Skills() {
         className='mb-24'
         variants={fadeIn("right", "spring", 0, 0.6)}
         >
-        <h2 className='uppercase tracking-widest text-foreground/60 mb-4'>
+        <h2 className='uppercase tracking-widest text-muted-foreground mb-4'>
         {SkillsSectionText.heading}
         </h2>
         <p className='text-3xl lg:text-4xl font-medium max-w-xl'>
-          {SkillsSectionText.description.split(" ").map((word, wIndex) => (
-            <span key={wIndex} className="inline-flex mr-2">
-              {word.split("").map((letter, lIndex) => (
-                <AnimatedText key={lIndex}>{letter}</AnimatedText>
-              ))}
-            </span>
-          ))}
+          {SkillsSectionText.description}
         </p>
       </motion.div>
 
@@ -71,7 +63,8 @@ export default function Skills() {
                 <SkillCard
                   name={skill.name}
                   imgUrl={skill.logo}
-                  widthHeight={35}
+                  isCore={skill.isCore}
+                  widthHeight={30}
                 />
               </motion.li>
             ))}
