@@ -61,6 +61,9 @@ export default function About() {
                 <li>
                   <Badge variant="accent">TAILWINDCSS</Badge>
                 </li>
+                <li>
+                  <Badge variant="accent">TYPESCRIPT</Badge>
+                </li>
               </ul>
             </article>
             <article className="space-y-1">
