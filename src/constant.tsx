@@ -97,7 +97,7 @@ export const skills = [
 		name: 'Typescript',
 		logo: 'typescript.svg',
     category: ['frontend', 'backend'],
-    isCore: false
+    isCore: true
 	},
 	{
     name: 'Zustand',
